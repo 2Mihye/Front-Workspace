@@ -90,6 +90,26 @@
                 <h3>댓글쓰기</h3>
                 <input type="text" placeholder="글 작성하기">
                 <button type="submit" id="post-button">게시물 작성</button>
+                <script>
+                    document.getElementById("post-button").addEventListener("click",function(post-button){
+                        const blogPostContent = document.getElementById("blogPost").value;
+                        if (blogPostContent.trim() !== ""){
+                            const timeStamp = new Date().getTime();
+                            const blogPost = {
+                                id: timeStamp,
+                                content: blogPostContent,
+                            };
+                            const savedPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+                            savedPosts.push(blogPost);
+                            localStorage.setItem("blogPosts", JSON.stringify(savePosts));
+
+                            alert("게시글이 저장되었습니다.");
+                            window.location.href = "homeInformation.html";
+                        } else {
+                            alert("게시글 내용을 입력하세요.");
+                        }
+                    })
+                </script>
             </artlcle>
 
         </section>
