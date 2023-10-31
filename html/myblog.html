@@ -10,20 +10,31 @@
         
         <header>
             <img src="./img/keropi.jpg" alt="이미지2" style="width: 300px; height: 250px;">
-            <p><h2>미혜의 꿈은 이루어질까로그</h2></p>
+            <p><h2>미혜의 꿈은 이루어질까로그</h2></p><img src="./img/onion6.png">
 
         </header>
         <section>
             <nav>
+                <form id="loginForm">
+                    <label for="userName">아이디 : </label>
+                    <input type="text" id="userName" name="userName" required>
+                    <br><br>
+                    <label for="password">비밀번호 : </label>
+                    <input type="password" id="password" name="password" required>
+                    <br><br>
+                    <button type="submit" id="loginButton" disabled>로그인</button>
+                </form><br>
+                <audio id="myAudio" controls autoplay>
+                    <source src="Baby Shark (Remix)(audiosong.in).mp3" type="audio/mpeg">
+                </audio><br>
+
                 <ul>
-                    
                     <li><strong>자기소개</strong></li><br>
                     <li><strong>다이어리</strong></li><br>
                     <li><strong>방 명 록</strong></li><br>
-                    <audio id="myAudio" controls autoplay>
-                        <source src="Baby Shark (Remix)(audiosong.in).mp3" type="audio/mpeg">
-                    </audio>
+
                 </ul>
+                
             </nav>
 
 
@@ -33,13 +44,13 @@
                     <br>양파쿵야처럼 살고싶다.
                 </p>
                 <div id="pagination">
-                    <button id="prevPage">이전</button>
                     <div class="img-container">
                         <!-- 이미지를 추가하는 공간 -->
                     </div>
+                    <button id="prevPage">이전</button>
                     <button id="nextPage">다음</button>
                 </div>
-                <script src="./js/app.js"></script>
+                <script src="./js/myblog.js"></script>
             </article>
 
             <artlcle class="comment">

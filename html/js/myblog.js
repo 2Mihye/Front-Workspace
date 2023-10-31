@@ -1,12 +1,35 @@
+// 아이디와 비밀번호 입력 가져오기
+const usernameInput = document.getElementById('userName');
+const passwordInput = document.getElementById('password');
+
+// 로그인 버튼 가져오기
+const loginButton = document.getElementById('loginButton');
+
+//document.getElementById("submit",function() => {
+
+//})
+// 입력에서 내용이 변경될 때 실행되는 함수
+function checkInputs(){
+    if(usernameInput.value.trim() !== '' && passwordInput.value.trim() !== ''){
+        loginButton.removeAttribute('disabled');
+    } else{
+    loginButton.setAttribute('disabled', true);
+    }
+}
+usernameInput.addEventListener('input', checkInputs);
+passwordInput.addEventListener('input', checkInputs);
+
 const images = [
     './img/onion.jpg',
     './img/onion1.jpg',
     './img/onion2.jpeg',
     './img/onion3.jpg',
     './img/onion4.jpg',
-    './img/onion5.jpeg'
+    './img/onion5.jpeg',
+    './img/onion8.jpeg',
+    './img/onion7.png'
     ];
-    const imagesPerpage = 2; // 한 페이지에 표시될 이미지 수 = 2장
+    const imagesPerpage = 4; // 한 페이지에 표시될 이미지 수 = 2장
     let currentPage = 0; // 현재 페이지를 나타내는 변수로 현재 페이지는 초기값을 항상 0으로 해서 첫 번째 페이지를 표시함
 
     const imageContainer = document.querySelector('.img-container'); // 이미지가 표시될 div 공간
