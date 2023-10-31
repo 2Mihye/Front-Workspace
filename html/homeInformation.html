@@ -3,91 +3,43 @@
     <head>
         <title>미혜블로그</title>
         <meta charset="UTF-8">
-        <style>
-            *{
-                box-sizing: border-box;
-            }
-            header{
-                background-color: #fff78ac7;
-                /*background: linear-gradient(90deg,lightCyan,skyblue 50%,aliceblue);*/
-                padding: 30px;
-                text-align: center;
-                font-size: 35px;
-                color: white;
-                text-align: center;
-            }
-
-            nav{
-                float: left;
-                width: 15%;
-                height: 300px;
-                /*background:linear-gradient(to left, #c9d6ff,#e2e2e2);*/
-                background-color:rgb(193, 253, 193);
-                padding: 20px;
-            }
-            nav ul{
-                list-style-type: none;
-                padding: 0;
-            }
-
-            article{
-                float: left;
-                padding: 20;
-                width: 85%;
-                background-color: #f1f1f1;
-                height: 300px;
-                text-align: center;
-            }
-
-            section::after { /*콜론을 2개 넣어서 이제부터 내가 시작한다는 것을 알림*/
-                content: "";
-                display: table;
-                clear: both;
-            }
-            footer {
-               /* background-color: #cfff33;*/
-               background:linear-gradient(to right,aliceblue, lightCyan) ; /*시작할 색상 정하기*/
-                padding: 10px;
-                text-align: center;
-                color: black;
-            }
-            @media (max-width:600px){
-                nav,article{
-                    width: 100%;
-                    height: auto;
-                }
-            }
-            .comment input[type="text"]{
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 10px;
-            }
-            .comment button{
-                float: right;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="css/blogstyle.css">
+        
     </head>
     <body>
+        
         <header>
-            <img src="keropi.jpg" alt="이미지2" style="width: 300px; height: 250px;">
+            <img src="./img/keropi.jpg" alt="이미지2" style="width: 300px; height: 250px;">
             <p><h2>미혜의 꿈은 이루어질까로그</h2></p>
-            <audio id="myAudio" controls autoplay>
-                <source src="Baby Shark (Remix)(audiosong.in).mp3" type="audio/mpeg">
-            </audio>
+
         </header>
         <section>
             <nav>
                 <ul>
-                    <li>자기소개</li><br>
-                    <li>다이어리</li><br>
-                    <li>방 명 록</li>
+                    
+                    <li><strong>자기소개</strong></li><br>
+                    <li><strong>다이어리</strong></li><br>
+                    <li><strong>방 명 록</strong></li><br>
+                    <audio id="myAudio" controls autoplay>
+                        <source src="Baby Shark (Remix)(audiosong.in).mp3" type="audio/mpeg">
+                    </audio>
                 </ul>
             </nav>
 
 
             <article>
                 <p><br>안녕하세요. 노력없이 성과를 이루고싶은 이미혜의 블로그입니다.<br>
-                    <br>놀고 먹고 자고 싸고 하는데 누가 돈 주고 귀엽다 해주면 좋겠어요.</p>
+                    <br>놀고 먹고 자고 싸고 하는데 누가 돈 주고 귀엽다 해주면 좋겠어요.<br>
+                    <br>양파쿵야처럼 살고싶다.
+                </p>
+                <div id="pagination">
+                    <button id="prevPage">이전</button>
+                    <div class="img-container">
+                        <!-- 이미지를 추가하는 공간 -->
+                    </div>
+                    <button id="nextPage">다음</button>
+                </div>
+                <script src="./js/app.js"></script>
             </article>
 
             <artlcle class="comment">
@@ -95,24 +47,8 @@
                 <input type="text" placeholder="글 작성하기">
                 <button type="submit" id="post-button">게시물 작성</button>
                 <script>
-                    document.getElementById("post-button").addEventListener("click",function(post-button){
-                        const blogPostContent = document.getElementById("blogPost").value;
-                        if (blogPostContent.trim() !== ""){
-                            const timeStamp = new Date().getTime();
-                            const blogPost = {
-                                id: timeStamp,
-                                content: blogPostContent,
-                            };
-                            const savedPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
-                            savedPosts.push(blogPost);
-                            localStorage.setItem("blogPosts", JSON.stringify(savePosts));
-
-                            alert("게시글이 저장되었습니다.");
-                            window.location.href = "homeInformation.html";
-                        } else {
-                            alert("게시글 내용을 입력하세요.");
-                        }
-                    })
+                    const audio = document.getElementById('myAudio');
+                    audio.play();
                 </script>
             </artlcle>
 
