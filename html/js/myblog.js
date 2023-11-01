@@ -19,6 +19,9 @@ function checkInputs(){
 usernameInput.addEventListener('input', checkInputs);
 passwordInput.addEventListener('input', checkInputs);
 
+const audio = document.getElementById('myAudio');
+audio.play();
+
 const images = [
     './img/onion.jpg',
     './img/onion1.jpg',
@@ -29,7 +32,7 @@ const images = [
     './img/onion8.jpeg',
     './img/onion7.png'
     ];
-    const imagesPerpage = 4; // 한 페이지에 표시될 이미지 수 = 2장
+    const imagesPerpage = 3; // 한 페이지에 표시될 이미지 수 = 2장
     let currentPage = 0; // 현재 페이지를 나타내는 변수로 현재 페이지는 초기값을 항상 0으로 해서 첫 번째 페이지를 표시함
 
     const imageContainer = document.querySelector('.img-container'); // 이미지가 표시될 div 공간
@@ -104,3 +107,24 @@ const images = [
 
     displayImg(currentPage);
     updateButtons();
+
+
+
+// 파일을 업로드하는 버튼 클릭시 이벤트 처리
+document.getElementById("uploadButton").addEventListener("click", function(){
+    var fileInput = document.getElementById("fileInput"); // 파일 선택
+    var uploadImage = document.getElementById("uploadImage");
+    var imageContainer = document.getElementById("imageContainer");
+
+    if(fileInput.files.length > 0){
+        var file = fileInput.files[0];
+        var reader = new FileReader();// 현재는 빈 값. 빈 값인 파일을 읽기 위한 FileReader() 객체를 생성한 것 뿐
+        reader.onload = function (e) {
+            uploadImage.src = e.target.result; // 이미지 컨테이너에 스타일을 적용해서 업로드 된 이미지 표시                 
+            imageContainer.style.display = "block"; // 이미지를 보여줌
+        };
+        reader.readAsDataURL(file); // 파일을 Data URL로 읽는 것
+    } else {
+        alert("이미지 파일을 선택하세요.");
+    }
+})
