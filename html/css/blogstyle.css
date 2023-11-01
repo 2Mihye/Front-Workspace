@@ -55,7 +55,7 @@ nav{
     font-family: "Mong";
     float: left;
     width: 15%;
-    height: 550px;
+    height: 800px;
     /*background:linear-gradient(to left, #c9d6ff,#e2e2e2);*/
     background-color:#e9ffe9;
     padding: 20px;
@@ -73,7 +73,7 @@ aside {
     font-family: "Mong";
     float: right;
     width: 15%;
-    height: 550px;
+    height: 800px;
     background-color: lavenderblush;
     padding: 20px;
     text-align: center;
@@ -88,7 +88,7 @@ article{
     padding: 20px;
     width: 70%;
     background-color: white;
-    height: 550px;
+    height: 800px;
     text-align: center;
 }
 
@@ -116,16 +116,16 @@ footer {
 .comment h3{
     text-align: left;
     font-family: "Mong";
-    padding: 10px;
+    padding-left: 135px;
 }
 
 .comment input[type="text"]{
     font-family: "Mong";
-    width: 100%;
+    width: 75%;
     padding: 10px;
     margin-bottom: 10px;
 }
 .comment button{
     font-family: "Mong";
-    float: right;
+    float:inline-end;
 }

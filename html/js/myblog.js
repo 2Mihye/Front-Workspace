@@ -1,3 +1,4 @@
+
 // 아이디와 비밀번호 입력 가져오기
 const usernameInput = document.getElementById('userName');
 const passwordInput = document.getElementById('password');
@@ -66,6 +67,29 @@ const images = [
 
         });
     }
+
+    document.getElementById("postButton").addEventListener("click", function(postButton){
+        const blogPostContent = document.getElementById("blogPost").value;
+        
+        if (blogPostContent.trim() !== ""){
+            const timeStamp = new Date().getTime();
+            const blogPost = {
+                id: timeStamp,
+                content : blogPostContent,
+            };
+            const savedPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+            savedPosts.push(blogPost);
+            localStorage.setItem("blogPosts",JSON.stringify(savedPosts));
+
+            alert("게시글이 저장되었습니다.");
+
+            // 블로그 메인 페이지로 이동합니다.
+            window.location.href = "myblog.html";
+        } else {
+            alert("게시글 내용을 입력하세요.");
+        }
+    })
+
 
     // 버튼 업데이트
     function updateButtons(){
