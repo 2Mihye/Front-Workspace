@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>물건 계산하기</title>
+    </head>
+    <body>
+        <div>
+            <label for="item">상품명 : </label>
+            <input type="text" id="item" placeholder="물건 이름">
+            <label for="price">가격 : </label>
+            <input type="number" id="price" placeholder="가격" value="0"> <!-- 가격이 -가 되면 안 되기 때문에 기본값을 0으로 주는 것 -->
+            <label for="count">갯수 : </label>
+            <input type="number" id="count" placeholder="갯수" value="1">
+            <button onclick="addItem()">추가</button> <!-- onclick은 전부 소문자인데 React에서는 c가 대문자임. JS에서는 어지간해서는 camelcase없이 전부 소문자로 감 -->
+        </div>
+        <div>
+            <ul id="itemList">
+                <!-- 추가한 상품 목록 나열 -->
+
+            </ul>
+        </div>
+        <div>
+            <p>총 가격 :<span id="totalPrice">0</span> 원</p>
+        </div>
+        <script src="./js/goodsCal.js">
+            
+        </script>
+    </body>
+</html>
