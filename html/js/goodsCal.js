@@ -22,8 +22,8 @@ function addItem(){ // js는 html과 관련이 없는데 관련짓기 위해 id�
     listItem.textContent = `${itemValue} | 가격 : ${priceValue} 원 X ${countValue} = ${totalPriceCount} 원`;
     itemList.appendChild(listItem);
 
-    total += totalPrice;
-    totalPriceCount.textContent = total + "원";
+    total += totalPriceCount;
+    totalPrice.textContent = total + "원";
 
     itemInput.value = "";
     priceInput.value = "0";
