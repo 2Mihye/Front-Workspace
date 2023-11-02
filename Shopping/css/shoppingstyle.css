@@ -1,12 +1,12 @@
 @font-face {
-    src: url("./fonts/MongThirtyoneB.ttf");
+    src: url("../fonts/MongThirtyoneB.ttf");
     font-family: "Mong";
 }
 
 audio{
     display: block;
     margin: 0 auto;
-    max-width: 95%;
+    width: 280px;
     border: none;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -22,7 +22,7 @@ audio::-webkit-media-controls-play-button {
 }
 
 header{
-    background-image: url('./img/title.png');
+    background-image: url('../img/title.png');
     width: auto;
     height: 350px;
     text-align: center;
@@ -35,21 +35,29 @@ nav {
     height: 500px;
     width: 15%;
 }
-
+nav ul{
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+section{
+    display: flex;
+}
 article{
+
     font-family: "Mong";
     text-align: center;
     height: 500px;
-    width: 70%; 
+    width: 80%; 
 }
 
 aside {
     font-family: "Mong";
     float: right;
     height: 500px;
-    width: 15%;
     padding: 20px;
     text-align: center;
+    width: 20%;
 }
 
 .img-container {
@@ -59,8 +67,8 @@ aside {
 }
 
 .image {
-    width: 230px;
-    height: 230px;
+    width: 250px;
+    height: 250px;
     margin: 10px;
 }
 
