@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>이미지 변경하기</title>
+        <script src="./js/jquery-3.7.1.js"></script>
+        <script>
+            /*
+            attr() : jQuery에서 사용되는 메서드로 attribute의 줄임말
+                1. attr()을 사용하여 속성 읽기
+                    var value = $("선택자").attr("속성이름");
+                    // 이미지 요소 src 속성 값을 가져올 예제 코드
+                        var srcValue = $("img").attr("src");
+                2. attr()을 사용하여 속성값 변경
+                    $("선택자").attr("속성이름", "새로운 값");
+                    // 이미지 요소의 src 속성 값을 변경
+                        $("img").attr("src","새로운이미지.jpg");
+
+                    만약 요소 전체가 아닌 특정 요소(태그)만 변경하고 싶다면 ID나 class, name, alt 등의 속성 값을 이용하여 요소(태그)에서 특정 값만 변경 가능
+                    $("선택자[속성값]").attr("src","새로운 값");
+                    // 이미지 요소의 src 속성 값을 특정 이미지 요소만 변경
+                        <img src="./img/onion.jpg" alt="onion">
+                        $("img[alt='onion']").attr("src","./img/onion7.png");
+                        alt=onion 값을 이용하여 alt에 onion이 작성된 이미지만 변경
+
+            */
+
+            $(function() {
+                $("button").on("click", function(){
+                    // $("img").attr("src","./img/onion7.png");
+                    $("img[alt='onion']").attr("src","./img/onion7.png");
+                    $("img[alt='onion1']").attr("src","./img/onion8.jpeg");
+                });
+            });
+        </script>
+
+        <style>
+            img {
+                width: 300px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <button>이미지 변경</button>
+        <img src="./img/onion.jpg" alt="onion">
+        <img src="./img/onion1.jpg" alt="onion1">
+    </body>
+</html>
